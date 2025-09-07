@@ -76,18 +76,18 @@ function donate() {
 // ---------------- QR Code ----------------
 let qr;
 
-// function generateQRCode(name) {
-//   if (!qr) {
-//     qr = new QRious({
-//       element: document.getElementById("qrCanvas"),
-//       size: 200,
-//       value: name
-//     });
-//   } else {
-//     qr.value = name;
-//   }
-//   document.getElementById("qrMsg").textContent = `📱 QR Code generated for ${name}`;
-// }
+function generateQRCode(name) {
+  if (!qr) {
+    qr = new QRious({
+      element: document.getElementById("qrCanvas"),
+      size: 200,
+      value: name
+    });
+  } else {
+    qr.value = name;
+  }
+  document.getElementById("qrMsg").textContent = `📱 QR Code generated for ${name}`;
+}
 
 // Generate QR after login
 function login() {
