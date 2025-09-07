@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bheed Rakshak Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🛡️ Bheed Rakshak Platform</h1>
+    <p>Smart Crowd & Safety Management for Indian Temples</p>
+  </header>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('login')">Login</button>
+    <button onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('profile')">Profile</button>
+    <button onclick="showPage('prayers')">Prayer Times</button>
+    <button onclick="showPage('chatbot')">Chatbot</button>
+    <button onclick="showPage('qrcode')">QR Code</button>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="page active">
+    <div class="card">
+      <h2>Welcome to Bheed Rakshak</h2>
+      <p>Ensuring safe, smooth, and spiritual temple visits with smart crowd control, safety alerts, and AI-powered assistance.</p>
+    </div>
+  </section>
+
+  <!-- Login -->
+  <section id="login" class="page">
+    <div class="card">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="login()">Login</button>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="page">
+    <div class="card">
+      <h2>Welcome, <span id="userDisplay"></span>!</h2>
+      <p>Manage your temple visit safely and easily.</p>
+      <button class="sos-btn" onclick="triggerSOS()">🚨 Emergency SOS</button>
+    </div>
+
+    <div class="card">
+      <h2>Darshan Slot Booking</h2>
+      <input type="date" id="darshanDate">
+      <select id="darshanTime">
+        <option value="6:00 AM">6:00 AM</option>
+        <option value="9:00 AM">9:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="6:30 PM">6:30 PM</option>
+        <option value="8:30 PM">8:30 PM</option>
+      </select>
+      <button onclick="bookDarshan()">Book Slot</button>
+      <p id="bookingMessage"></p>
+    </div>
+
+    <div class="card">
+      <h2>Live Crowd Density</h2>
+      <p id="crowdStatus">Checking crowd levels...</p>
+      <button onclick="updateCrowdStatus()">Refresh Status</button>
+    </div>
+
+    <div class="card">
+      <h2>Latest Announcements</h2>
+      <ul id="announcements">
+        <li>⚡ Next Maha Aarti at 6:30 PM</li>
+        <li>🍛 Free prasad distribution near Gate No. 3</li>
+        <li>📢 Lost & Found counter near Exit Gate</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Temple Map</h2>
+      <div class="map-placeholder">[ Temple Map Placeholder ]</div>
+    </div>
+
+    <div class="card">
+      <h2>Lost & Found Desk</h2>
+      <input type="text" placeholder="Enter lost item">
+      <button>Report Lost Item</button>
+    </div>
+
+    <div class="card">
+      <h2>Feedback</h2>
+      <textarea id="feedback" placeholder="Share your feedback"></textarea>
+      <button onclick="submitFeedback()">Submit</button>
+      <p id="feedbackMsg"></p>
+    </div>
+
+    <div class="card">
+      <h2>Donations</h2>
+      <p>Support temple services and crowd safety.</p>
+      <button onclick="donate()">💰 Donate Now</button>
+    </div>
+  </section>
+
+  <!-- Profile -->
+  <section id="profile" class="page">
+    <div class="card">
+      <h2>Pilgrim Profile</h2>
+      <p><strong>Name:</strong> <span id="profileName">Not Logged In</span></p>
+      <input type="file" id="profilePic" accept="image/*">
+      <p id="picStatus"></p>
+    </div>
+  </section>
+
+  <!-- Prayer Times -->
+  <section id="prayers" class="page">
+    <div class="card">
+      <h2>Prayer Times</h2>
+      <ul>
+        <li>🕔 Morning Aarti – 6:00 AM</li>
+        <li>🌞 Noon Aarti – 12:30 PM</li>
+        <li>🌅 Evening Aarti – 6:30 PM</li>
+        <li>🌙 Night Aarti – 8:30 PM</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Chatbot -->
+  <section id="chatbot" class="page">
+    <div class="card">
+      <h2>AI Chatbot</h2>
+      <div class="chat-box" id="chatBox"></div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ask something...">
+        <button onclick="sendChat()">Send</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR Code -->
+    <!-- QR Code -->
+  <section id="qrcode" class="page">
+    <div class="card">
+      <h2>Your Pilgrim QR Code</h2>
+      <canvas id="qrCanvas"></canvas>
+      <p id="qrMsg">Login to generate your unique QR Code.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>© 2025 Bheed Rakshak Platform | Smart Temple Crowd Management</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
